@@ -6,6 +6,7 @@
 //
 
 #import "ViewController.h"
+#import <CommonCrypto/CommonDigest.h>
 
 @interface ViewController ()
 @end
@@ -125,6 +126,8 @@
     
     NSString * rootLength = [NSString stringWithFormat: @"\n\nThe root has %ld bytes, and I was able to pull it from the trust object.", CFDataGetLength(certData)];
     
+    NSString * shaHash = [[@"\n\nThe root certificate's SHA-1 hash is: " stringByAppendingString:[self sha1:(__bridge NSData *)certData] ] stringByAppendingString: @"."];
+    
     UIColor *newBGColor;
     
     switch (trustResult) {
@@ -142,10 +145,19 @@
     }
     
     [siteAddress setBackgroundColor:newBGColor];
-    [resultView setText:[resultString stringByAppendingString:rootLength]];
+    [resultView setText:[[resultString stringByAppendingString:rootLength] stringByAppendingString: shaHash]];
     
     // Shut it down -- we don't actually want to have a conversation.
     [[challenge sender] cancelAuthenticationChallenge:challenge];
     return NO;
+}
+
+- (NSString*)sha1:(NSData*)certData {
+    unsigned char sha1Buffer[CC_SHA1_DIGEST_LENGTH]; 
+    CC_SHA1(certData.bytes, certData.length, sha1Buffer); 
+    NSMutableString *fingerprint = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 3]; 
+    for (int i = 0; i < CC_SHA1_DIGEST_LENGTH; ++i) 
+        [fingerprint appendFormat:@"%02x ",sha1Buffer[i]]; 
+    return [fingerprint stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]; 
 }
 @end
