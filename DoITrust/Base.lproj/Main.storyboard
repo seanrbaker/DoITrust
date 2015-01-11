@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C78c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +17,66 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="https://www.google.com" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Ky-Xb-dCW">
+                                <rect key="frame" x="16" y="135" width="568" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL"/>
+                                <connections>
+                                    <action selector="testSite:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="0vK-eX-u1E"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="hCL-bL-8ZH"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7h-Do-LJW">
+                                <rect key="frame" x="262" y="472" width="76" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="76" id="cDx-WX-8mj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Test!">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="testSite:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="8ig-8Z-ukd"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Enter a server address above in order to test whether your device trusts its certificate." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NRm-Us-sSg">
+                                <rect key="frame" x="180" y="236" width="241" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="241" id="2PG-xR-JhC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="slG-1l-j9f"/>
+                                </connections>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="o7h-Do-LJW" firstAttribute="centerX" secondItem="NRm-Us-sSg" secondAttribute="centerX" id="7Jh-I0-sxl"/>
+                            <constraint firstItem="3Ky-Xb-dCW" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="7gy-L7-Zzt"/>
+                            <constraint firstItem="3Ky-Xb-dCW" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="FGI-Da-6Ux"/>
+                            <constraint firstItem="o7h-Do-LJW" firstAttribute="top" secondItem="NRm-Us-sSg" secondAttribute="bottom" constant="108" id="Hre-f4-TYY"/>
+                            <constraint firstAttribute="centerX" secondItem="3Ky-Xb-dCW" secondAttribute="centerX" id="OAd-zz-Wca"/>
+                            <constraint firstItem="NRm-Us-sSg" firstAttribute="top" secondItem="3Ky-Xb-dCW" secondAttribute="bottom" constant="71" id="eHC-H1-Q9K"/>
+                            <constraint firstItem="NRm-Us-sSg" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="h11-1e-ZwY"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="o7h-Do-LJW" secondAttribute="bottom" constant="94" id="hpb-NZ-GRC"/>
+                            <constraint firstAttribute="centerY" secondItem="3Ky-Xb-dCW" secondAttribute="centerY" multiplier="2" id="lz5-0q-rTW"/>
+                            <constraint firstItem="NRm-Us-sSg" firstAttribute="centerX" secondItem="3Ky-Xb-dCW" secondAttribute="centerX" id="yzv-Gj-fEa"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="resultView" destination="NRm-Us-sSg" id="hIO-T9-SwI"/>
+                        <outlet property="siteAddress" destination="3Ky-Xb-dCW" id="chh-bH-jWN"/>
+                        <outlet property="testButton" destination="o7h-Do-LJW" id="Vkg-F7-q3N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="220" y="366"/>
         </scene>
     </scenes>
 </document>
