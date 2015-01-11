@@ -42,10 +42,10 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Enter a server address above in order to test whether your device trusts its certificate." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NRm-Us-sSg">
-                                <rect key="frame" x="180" y="236" width="241" height="128"/>
+                                <rect key="frame" x="118" y="201" width="365" height="226"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="241" id="2PG-xR-JhC"/>
+                                    <constraint firstAttribute="width" constant="365" id="1yz-oc-QUC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -56,16 +56,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="o7h-Do-LJW" firstAttribute="centerX" secondItem="NRm-Us-sSg" secondAttribute="centerX" id="7Jh-I0-sxl"/>
+                            <constraint firstItem="NRm-Us-sSg" firstAttribute="top" secondItem="3Ky-Xb-dCW" secondAttribute="bottom" constant="36" id="0nO-hn-QC3"/>
                             <constraint firstItem="3Ky-Xb-dCW" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="7gy-L7-Zzt"/>
+                            <constraint firstItem="NRm-Us-sSg" firstAttribute="centerX" secondItem="o7h-Do-LJW" secondAttribute="centerX" id="94N-Rp-OfU"/>
                             <constraint firstItem="3Ky-Xb-dCW" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="FGI-Da-6Ux"/>
-                            <constraint firstItem="o7h-Do-LJW" firstAttribute="top" secondItem="NRm-Us-sSg" secondAttribute="bottom" constant="108" id="Hre-f4-TYY"/>
                             <constraint firstAttribute="centerX" secondItem="3Ky-Xb-dCW" secondAttribute="centerX" id="OAd-zz-Wca"/>
-                            <constraint firstItem="NRm-Us-sSg" firstAttribute="top" secondItem="3Ky-Xb-dCW" secondAttribute="bottom" constant="71" id="eHC-H1-Q9K"/>
-                            <constraint firstItem="NRm-Us-sSg" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="h11-1e-ZwY"/>
+                            <constraint firstItem="o7h-Do-LJW" firstAttribute="top" secondItem="NRm-Us-sSg" secondAttribute="bottom" constant="45" id="Tm2-ir-Sjb"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="o7h-Do-LJW" secondAttribute="bottom" constant="94" id="hpb-NZ-GRC"/>
+                            <constraint firstItem="NRm-Us-sSg" firstAttribute="centerX" secondItem="3Ky-Xb-dCW" secondAttribute="centerX" id="i6P-1e-x7R"/>
                             <constraint firstAttribute="centerY" secondItem="3Ky-Xb-dCW" secondAttribute="centerY" multiplier="2" id="lz5-0q-rTW"/>
-                            <constraint firstItem="NRm-Us-sSg" firstAttribute="centerX" secondItem="3Ky-Xb-dCW" secondAttribute="centerX" id="yzv-Gj-fEa"/>
                         </constraints>
                     </view>
                     <connections>
