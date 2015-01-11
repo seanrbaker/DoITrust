@@ -149,6 +149,8 @@
     
     // Shut it down -- we don't actually want to have a conversation.
     [[challenge sender] cancelAuthenticationChallenge:challenge];
+    
+    CFRelease(certData);
     return NO;
 }
 
